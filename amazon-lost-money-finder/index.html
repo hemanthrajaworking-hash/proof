@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Amazon lost-money finder (free, runs in your browser) | Hemanth Raja</title><meta name="description" content="Scan Amazon settlement, reimbursement, inventory adjustment and returns reports for lost or damaged stock not reimbursed, refunds without returns and fee overcharges. Runs in your browser; nothing is uploaded."><link rel="icon" href="data:,"><link rel="stylesheet" href="../style.css">
+<style>table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e3e7ee;padding:6px;text-align:left;vertical-align:top}td.n{text-align:right;white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.kpi{background:#f3f6fa;border-radius:8px;padding:10px}.kpi b{display:block;font-size:20px}label{display:block;margin:8px 0}button{padding:9px 14px;border-radius:8px;border:1px solid #0b5cad;background:#fff;color:#0b5cad;cursor:pointer;margin:4px 6px 4px 0}button.primary{background:#0b5cad;color:#fff}.wrap{overflow-x:auto}.warn{color:#9a6700}</style></head><body>
+<header><div><a href="../index.html">Hemanth Raja · Finance automation &amp; AI workflows</a><h1>Amazon lost-money finder</h1><p>Finds money Amazon may still owe you: lost or damaged warehouse stock that was not reimbursed, refunds where the item never came back, refund commission not returned, and FBA fees above your usual rate. Free. Runs only in your browser; nothing is uploaded, stored or sent.</p></div></header>
+<main>
+<div class="card"><h2>1. Choose your reports (from Seller Central)</h2>
+<label>Settlement report (Flat File V2, .txt or .csv)<br><input type="file" id="fSettlement" accept=".txt,.tsv,.csv"></label>
+<label>Reimbursements report (optional)<br><input type="file" id="fReimb" accept=".txt,.tsv,.csv"></label>
+<label>Inventory adjustments or Inventory Ledger adjustments (optional, needed for lost/damaged stock)<br><input type="file" id="fAdj" accept=".txt,.tsv,.csv"></label>
+<label>FBA customer returns report (optional, needed for refunds without returns)<br><input type="file" id="fReturns" accept=".txt,.tsv,.csv"></label>
+<label>Your unit cost when Amazon has no reimbursement value for an item <input type="number" id="unitCost" value="0" step="0.01" min="0"></label>
+<label>Days to wait for a return before flagging a refund <input type="number" id="grace" value="45" step="1" min="1"></label>
+<button class="primary" id="run">Find possible lost money</button><button id="sample">Try with sample files</button>
+<p>Sample files: <a href="samples/sample_settlement.txt" download>settlement</a> · <a href="samples/sample_reimbursements.csv" download>reimbursements</a> · <a href="samples/sample_inventory_adjustments.csv" download>adjustments</a> · <a href="samples/sample_returns.csv" download>returns</a> (a made-up seller, not real results).</p>
+<p id="msg" class="warn" role="status"></p></div>
+<div id="results" hidden><div class="card"><h2>2. Possible amount to look into</h2><div class="grid" id="kpis"></div><p>This is an estimate of money worth checking, not an amount you are owed. Some items will turn out to be correct.</p></div>
+<div class="card"><h2>3. Findings</h2><p><button id="dl">Download findings CSV</button></p><div class="wrap"><table><thead><tr><th>Item</th><th>Type</th><th>Amount</th><th>Possible recovery</th><th>Reason</th></tr></thead><tbody id="tbody"></tbody></table></div></div></div>
+<div class="card"><h2>Want help getting it back?</h2><p>I can file and follow the cases for you. <b>Fee: <span id="feePct">20</span>% of money actually recovered</b> (always below 25%), and nothing if nothing is recovered. <span id="feeEst"></span> No recovery is guaranteed.</p>
+<p><a class="cta" id="cta" href="mailto:hemanthrajaworking@gmail.com?subject=Done%20for%20you%3A%20Amazon%20lost-money%20finder&amp;body=Hi%20Hemanth%2C%0A%0AI%20tried%20your%20free%20Amazon%20lost-money%20finder%20and%20would%20like%20help%20recovering%20what%20it%20found.%0A%0AFiles%20I%20can%20share%20(report%20exports%20only%2C%20no%20logins)%3A%20%0A%0AThanks%2C%0A">Done for you</a> &nbsp; hemanthrajaworking@gmail.com</p>
+<p>Also see the <a href="../lost-money-finder/">Shopify lost-money finder</a>.</p></div>
+</main>
+<footer>Sample files describe a made-up seller. This page makes no network requests and keeps nothing after you close it. · Hyderabad, India · <a href="mailto:hemanthrajaworking@gmail.com">hemanthrajaworking@gmail.com</a></footer>
+<script src="js/amz.js"></script><script src="js/samples.js"></script><script src="js/app.js"></script></body></html>

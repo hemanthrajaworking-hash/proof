@@ -1,0 +1,6 @@
+adjusted-date,transaction-item-id,fnsku,sku,product-name,fulfillment-center-id,quantity,reason,disposition
+2026-08-01,T1,X0MUG,SKU-MUG,Sample mug,FC1,-3,M,SELLABLE
+2026-08-05,T2,X0MUG,SKU-MUG,Sample mug,FC1,1,F,SELLABLE
+2026-08-10,T3,X0LAMP,SKU-LAMP,Sample lamp,FC1,-2,E,SELLABLE
+2026-08-12,T4,X0LAMP,SKU-LAMP,Sample lamp,FC1,-1,E,SELLABLE
+2026-09-30,T5,X0MUG,SKU-MUG,Sample mug,FC1,-1,D,SELLABLE

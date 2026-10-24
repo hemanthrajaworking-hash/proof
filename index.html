@@ -1,5 +1,30 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Finance automation &amp; AI workflows, with a human in control | Hemanth Raja</title><meta name="description" content="I am Hemanth Raja: MBA in Finance, about five years of tax, GST and bookkeeping practice, and I build tested automation tools."><link rel="stylesheet" href="style.css"></head><body>
+<noscript><main><div class="card"><h2><a href="tools/">Free tools</a></h2><p>44 small free tools. Each runs in your browser; nothing is uploaded.</p></div><div class="card"><h2><a href="amazon-lost-money-finder/">Amazon lost-money finder</a></h2><p>Finds money Amazon may still owe you. Free, and it runs in your browser; nothing is uploaded.</p></div></main></noscript>
+<main id="home-free-pages" hidden><div class="card"><h2><a href="tools/">Free tools</a></h2><p>44 small free tools. Each runs in your browser; nothing is uploaded.</p></div><div class="card"><h2><a href="amazon-lost-money-finder/">Amazon lost-money finder</a></h2><p>Finds money Amazon may still owe you. Free, and it runs in your browser; nothing is uploaded.</p></div></main>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.getElementById('home-free-pages');
+  if(!box) return;
+  var mains=document.querySelectorAll('body > main'), primary=null, i, h;
+  for(i=0;i<mains.length;i++) if(mains[i]!==box) primary=mains[i];
+  if(!primary) return;
+  var before=null, kids=primary.children;
+  for(i=0;i<kids.length;i++){
+    h=kids[i].querySelector && kids[i].querySelector('h2');
+    if(h && h.textContent==='Working examples'){ before=kids[i]; break; }
+  }
+  if(!before){
+    var price=primary.querySelector('.card > b');
+    if(price) before=price.parentNode;
+  }
+  while(box.firstChild){
+    if(before) primary.insertBefore(box.firstChild, before);
+    else primary.appendChild(box.firstChild);
+  }
+  if(box.parentNode) box.parentNode.removeChild(box);
+});
+</script>
 <header><div><a href="index.html">Hemanth Raja · Finance automation &amp; AI workflows</a><h1>Finance automation &amp; AI workflows, with a human in control</h1><p>I am Hemanth Raja: MBA in Finance, about five years of tax, GST and bookkeeping practice, and I build tested automation tools.</p></div></header>
 <main><div class="card"><h2><a href="offers/agencies.html">For AI &amp; automation agencies (white-label)</a></h2><p>Extra build capacity you can sell under your own name.</p></div><div class="card"><h2><a href="offers/bookkeepers.html">For bookkeepers &amp; small accounting firms (US, UK, AU)</a></h2><p>Tools that do the matching and leave only the exceptions for your team.</p></div><div class="card"><h2><a href="offers/sellers.html">For Shopify, Amazon &amp; Flipkart sellers</a></h2><p>Payout (settlement) vs order checks, so short payments are not missed.</p></div><div class="card"><h2>Working examples</h2><ul><li><a href="work/finops-agent/">Month-end close pipeline (8 steps, human approval)</a></li><li><a href="work/eval-lab/">AI answer testing &amp; safety checks</a></li><li><a href="work/voice-rag-agent/">Voice + document Q&amp;A agent (English, Hindi, Telugu)</a></li><li><a href="work/ap-automation/">Invoice vs PO vs receipt matching (3-way match)</a></li><li><a href="work/invoice-extractor/">Invoice data extraction (OCR to Excel)</a></li><li><a href="work/fpa-variance-forecast/">Month-end budget vs actual pack</a></li><li><a href="work/gst-itc-recon/">Ledger vs statement matching (exceptions only)</a></li></ul><p>Every example runs on demo data and has automated tests.</p></div><div class="card"><b>Price:</b> a fixed price, quoted after a free sample.<br><br><a class="cta" href="mailto:hemanthrajaworking@gmail.com?subject=Finance%20automation%20&amp;%20AI%20workflows,%20with%20a%20human%20in%20control">Email me for a free sample</a> &nbsp; hemanthrajaworking@gmail.com</div></main>
 <footer>All examples use demo or synthetic data. No client data is shown. · Hyderabad, India · <a href="mailto:hemanthrajaworking@gmail.com">hemanthrajaworking@gmail.com</a></footer></body></html>

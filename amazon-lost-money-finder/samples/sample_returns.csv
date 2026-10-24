@@ -1,0 +1,2 @@
+return-date,order-id,sku,asin,fnsku,product-name,quantity,fulfillment-center-id,detailed-disposition,reason,status
+2026-07-05,A1,SKU-MUG,B0MUG,X0MUG,Sample mug,1,FC1,SELLABLE,UNWANTED_ITEM,Unit returned to inventory
