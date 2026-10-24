@@ -1,0 +1,6 @@
+/* Sample records (made up, not a real store). Includes: exact matches, a rounding difference,
+   a short (partial) deposit, a missing deposit, two payouts with the same amount, a refund and a chargeback. */
+window.PAYOUT_SAMPLES = {
+payouts: "Payout Date,Status,Charges,Refunds,Adjustments,Reserved Funds,Fees,Retried Amount,Total,Currency\n2026-09-01,paid,$1250.00,-$40.00,$0.00,$0.00,-$37.45,$0.00,$1172.55,USD\n2026-09-03,paid,$980.40,$0.00,$0.00,$0.00,-$29.71,$0.00,$950.69,USD\n2026-09-05,paid,$640.00,$0.00,-$15.00,$0.00,-$18.86,$0.00,$606.14,USD\n2026-09-08,paid,$2105.00,-$120.00,$0.00,$0.00,-$61.35,$0.00,$1923.65,USD\n2026-09-10,paid,$500.00,$0.00,$0.00,$0.00,-$14.80,$0.00,$485.20,USD\n2026-09-12,paid,$500.00,$0.00,$0.00,$0.00,-$14.80,$0.00,$485.20,USD\n2026-09-15,paid,$1410.25,$0.00,-$65.00,$0.00,-$41.20,$0.00,$1304.05,USD\n2026-09-17,paid,$720.00,-$25.00,$0.00,$0.00,-$21.18,$0.00,$673.82,USD\n",
+bank: "Date,Description,Amount\n09/02/2026,SHOPIFY PAYOUT,\"1,172.55\"\n09/03/2026,Coffee supplier,-84.20\n09/04/2026,SHOPIFY PAYOUT,950.70\n09/07/2026,SHOPIFY PAYOUT,606.14\n09/10/2026,SHOPIFY PAYOUT,\"1,898.65\"\n09/11/2026,SHOPIFY PAYOUT,485.20\n09/14/2026,SHOPIFY PAYOUT,485.20\n09/18/2026,SHOPIFY PAYOUT,673.82\n09/22/2026,SHOPIFY TRANSFER,212.40\n"
+};
