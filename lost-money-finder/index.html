@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Shopify lost-money finder (free, runs in your browser) | Hemanth Raja</title><meta name="description" content="Scan Shopify payouts for missing deposits, short deposits, chargebacks and fees above an estimated rate. Runs in your browser; nothing is uploaded."><link rel="icon" href="data:,"><link rel="stylesheet" href="../style.css">
+<style>table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e3e7ee;padding:6px;text-align:left;vertical-align:top}td.n{text-align:right;white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.kpi{background:#f3f6fa;border-radius:8px;padding:10px}.kpi b{display:block;font-size:20px}label{display:block;margin:8px 0}button{padding:9px 14px;border-radius:8px;border:1px solid #0b5cad;background:#fff;color:#0b5cad;cursor:pointer;margin:4px 6px 4px 0}button.primary{background:#0b5cad;color:#fff}.wrap{overflow-x:auto}.warn{color:#9a6700}</style></head><body>
+<header><div><a href="../index.html">Hemanth Raja · Finance automation &amp; AI workflows</a><h1>Shopify lost-money finder</h1><p>Scans your Shopify payouts for money that may not have reached you: missing or short deposits, chargebacks and adjustments, unusually high refunds, and fees above an estimated rate. Free. Runs only in your browser; nothing is uploaded, stored or sent.</p></div></header>
+<main>
+<div class="card"><h2>1. Choose your files</h2>
+<label>Shopify payouts CSV (an "Orders" column, if you add one, makes the fee estimate more accurate)<br><input type="file" id="fPayouts" accept=".csv,text/csv"></label>
+<label>Bank statement CSV (optional, needed to find missing or short deposits)<br><input type="file" id="fBank" accept=".csv,text/csv"></label>
+<details><summary>Fee rate table (estimates, edit to match your plan and country)</summary>
+<label>Plan <select id="plan"></select></label>
+<label>Percentage fee % <input type="number" id="pct" step="0.01" min="0"></label>
+<label>Fixed fee per order <input type="number" id="fixed" step="0.01" min="0"></label>
+<label>Ignore fee differences up to <input type="number" id="feeTol" value="1.00" step="0.01" min="0"></label>
+<label><input type="checkbox" id="dayFirst"> Bank dates are day/month/year</label>
+<p class="warn">These default rates are rough US online card estimates. Your real rate depends on your plan, country, card type and currency, so a "fee above estimate" is a question to check, not proof of an overcharge.</p></details>
+<button class="primary" id="run">Find possible lost money</button><button id="sample">Try with sample data</button>
+<p>Sample files: <a href="samples/shopify_payouts_sample.csv" download>payouts</a> · <a href="samples/bank_statement_sample.csv" download>bank statement</a> (made-up data).</p>
+<p id="msg" class="warn" role="status"></p></div>
+<div id="results" hidden><div class="card"><h2>2. Possible amount to look into</h2><div class="grid" id="kpis"></div><p>This is an estimate of money worth checking, not an amount you are owed.</p></div>
+<div class="card"><h2>3. Findings</h2><p><button id="dl">Download findings CSV</button></p><div class="wrap"><table><thead><tr><th>Payout</th><th>Date</th><th>Type</th><th>Amount</th><th>Possible recovery</th><th>Reason</th></tr></thead><tbody id="tbody"></tbody></table></div></div></div>
+<div class="card"><h2>Want help getting it back?</h2><p>I can work through the findings with you: trace missing payouts with Shopify, prepare chargeback evidence, and check fees against your actual plan. Pricing: <b>a percentage of the recovered amount, quoted after a free check</b>. No recovery is guaranteed; some items will turn out to be correct.</p>
+<p><a class="cta" href="mailto:hemanthrajaworking@gmail.com?subject=Shopify%20lost-money%20free%20check">Email me for a free check</a> &nbsp; hemanthrajaworking@gmail.com</p>
+<p>Also see the <a href="../shopify-payout-checker/">Shopify payout checker</a>.</p></div>
+</main>
+<footer>Sample data is synthetic. This page makes no network requests and keeps nothing after you close it. · Hyderabad, India · <a href="mailto:hemanthrajaworking@gmail.com">hemanthrajaworking@gmail.com</a></footer>
+<script src="../shopify-payout-checker/js/recon.js"></script><script src="js/lost.js"></script><script src="js/samples.js"></script><script src="js/app.js"></script></body></html>
