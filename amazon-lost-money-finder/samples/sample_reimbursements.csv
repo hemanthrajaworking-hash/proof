@@ -1,0 +1,3 @@
+approval-date,reimbursement-id,case-id,amazon-order-id,reason,sku,fnsku,asin,condition,currency-unit,amount-per-unit,amount-total,quantity-reimbursed-cash,quantity-reimbursed-inventory,quantity-reimbursed-total
+2026-08-20,R1,,,Lost_Warehouse,SKU-MUG,X0MUG,B0MUG,New,USD,8.00,8.00,1,0,1
+2026-08-22,R2,,,Damaged_Warehouse,SKU-LAMP,X0LAMP,B0LAMP,New,USD,15.00,15.00,1,0,1

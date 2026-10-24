@@ -26,3 +26,7 @@ Send the base URL back. The 7 proof slots get these URLs (set `public: true`):
 Group pages: <BASE>/offers/agencies.html, /offers/bookkeepers.html, /offers/sellers.html.
 
 To rebuild after edits: `python3 build.py` (build.py can be left out of the upload).
+
+Free pages (listed on the home page by build.py; their HTML is not regenerated):
+- tools → <BASE>/tools/
+- amazon-lost-money-finder → <BASE>/amazon-lost-money-finder/

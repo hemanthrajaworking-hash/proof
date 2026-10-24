@@ -1,0 +1,17 @@
+settlement-id	settlement-start-date	settlement-end-date	deposit-date	total-amount	currency	transaction-type	order-id	sku	quantity-purchased	amount-type	amount-description	amount	posted-date
+111	2026-06-20	2026-08-14	2026-08-15	25.90	USD								
+111						Order	A1	SKU-MUG	1	ItemPrice	Principal	20.00	2026-06-21
+111						Order	A1	SKU-MUG	1	ItemFees	Commission	-3.00	2026-06-21
+111						Order	A1	SKU-MUG	1	ItemFees	FBAPerUnitFulfillmentFee	-4.00	2026-06-21
+111						Order	A2	SKU-MUG	1	ItemPrice	Principal	20.00	2026-06-22
+111						Order	A2	SKU-MUG	1	ItemFees	Commission	-3.00	2026-06-22
+111						Order	A2	SKU-MUG	1	ItemFees	FBAPerUnitFulfillmentFee	-4.00	2026-06-22
+111						Order	A3	SKU-MUG	1	ItemPrice	Principal	20.00	2026-06-23
+111						Order	A3	SKU-MUG	1	ItemFees	Commission	-3.00	2026-06-23
+111						Order	A3	SKU-MUG	1	ItemFees	FBAPerUnitFulfillmentFee	-5.50	2026-06-23
+111						Order	A4	SKU-MUG	2	ItemPrice	Principal	40.00	2026-06-24
+111						Order	A4	SKU-MUG	2	ItemFees	Commission	-6.00	2026-06-24
+111						Order	A4	SKU-MUG	2	ItemFees	FBAPerUnitFulfillmentFee	-8.00	2026-06-24
+111						Refund	A1	SKU-MUG		ItemPrice	Principal	-20.00	2026-07-01
+111						Refund	A1	SKU-MUG		ItemFees	Commission	2.40	2026-07-01
+111						Refund	A2	SKU-MUG		ItemPrice	Principal	-20.00	2026-07-02

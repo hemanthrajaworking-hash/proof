@@ -57,3 +57,44 @@ work=''.join(f'<li><a href="work/{k}/">{v[0]}</a></li>' for k,v in W.items())
 page('index.html','Finance automation &amp; AI workflows, with a human in control','I am Hemanth Raja: MBA in Finance, about five years of tax, GST and bookkeeping practice, and I build tested automation tools.',
  cards+f'<div class="card"><h2>Working examples</h2><ul>{work}</ul><p>Every example runs on demo data and has automated tests.</p></div>',0)
 open('.nojekyll','w').write('')
+
+# Hand-written free pages. Keep them off W so page() does not overwrite their HTML.
+# The cards are inserted before <header> so this edit stays clear of the main listing
+# line (open PRs edit that line). On load they move in front of Working examples.
+def _link_free_pages(path):
+    marker='id="home-free-pages"'
+    html=open(path).read()
+    if marker in html: return
+    cards=''.join(f'<div class="card"><h2><a href="{href}">{title}</a></h2><p>{blurb}</p></div>' for href,title,blurb in [
+        ('tools/','Free tools','44 small free tools. Each runs in your browser; nothing is uploaded.'),
+        ('amazon-lost-money-finder/','Amazon lost-money finder','Finds money Amazon may still owe you. Free, and it runs in your browser; nothing is uploaded.'),
+    ])
+    script='''<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.getElementById('home-free-pages');
+  if(!box) return;
+  var mains=document.querySelectorAll('body > main'), primary=null, i, h;
+  for(i=0;i<mains.length;i++) if(mains[i]!==box) primary=mains[i];
+  if(!primary) return;
+  var before=null, kids=primary.children;
+  for(i=0;i<kids.length;i++){
+    h=kids[i].querySelector && kids[i].querySelector('h2');
+    if(h && h.textContent==='Working examples'){ before=kids[i]; break; }
+  }
+  if(!before){
+    var price=primary.querySelector('.card > b');
+    if(price) before=price.parentNode;
+  }
+  while(box.firstChild){
+    if(before) primary.insertBefore(box.firstChild, before);
+    else primary.appendChild(box.firstChild);
+  }
+  if(box.parentNode) box.parentNode.removeChild(box);
+});
+</script>
+'''
+    block='<noscript><main>'+cards+'</main></noscript>\n<main '+marker+' hidden>'+cards+'</main>\n'+script
+    if '<header>' not in html: raise SystemExit('home page has no header')
+    open(path,'w').write(html.replace('<header>', block+'<header>', 1))
+_link_free_pages('index.html')
+

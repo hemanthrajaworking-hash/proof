@@ -1,0 +1,222 @@
+[
+ {
+  "slug": "file-fingerprint",
+  "name": "File fingerprint checker",
+  "widget": "hash"
+ },
+ {
+  "slug": "version-compare",
+  "name": "Version number compare",
+  "widget": "version"
+ },
+ {
+  "slug": "json-checker",
+  "name": "JSON checker",
+  "widget": "json"
+ },
+ {
+  "slug": "safe-file-check",
+  "name": "Safe file check",
+  "widget": "hash"
+ },
+ {
+  "slug": "change-diff",
+  "name": "Before/after list compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "release-checklist",
+  "name": "Release checklist maker",
+  "widget": "checklist"
+ },
+ {
+  "slug": "task-steps-checklist",
+  "name": "Task runner checklist",
+  "widget": "checklist"
+ },
+ {
+  "slug": "data-profile",
+  "name": "Spreadsheet quick profile",
+  "widget": "profile"
+ },
+ {
+  "slug": "event-timeline",
+  "name": "Event timeline builder",
+  "widget": "timeline"
+ },
+ {
+  "slug": "field-fix-check",
+  "name": "Field consistency check",
+  "widget": "conflict"
+ },
+ {
+  "slug": "device-list-compare",
+  "name": "Device list compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "notes-dedupe",
+  "name": "Notes duplicate finder",
+  "widget": "dupes"
+ },
+ {
+  "slug": "config-inspector",
+  "name": "Config file inspector",
+  "widget": "json"
+ },
+ {
+  "slug": "upgrade-checklist",
+  "name": "Upgrade and rollback checklist",
+  "widget": "checklist"
+ },
+ {
+  "slug": "provider-switch-compare",
+  "name": "Provider switch compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "image-batch-fingerprint",
+  "name": "Image fingerprint checker",
+  "widget": "hash"
+ },
+ {
+  "slug": "video-log-timeline",
+  "name": "Log timeline builder",
+  "widget": "timeline"
+ },
+ {
+  "slug": "site-inventory-profile",
+  "name": "Page inventory profile",
+  "widget": "profile"
+ },
+ {
+  "slug": "repo-file-fingerprint",
+  "name": "Code file fingerprint",
+  "widget": "hash"
+ },
+ {
+  "slug": "workflow-summary",
+  "name": "Automation workflow summary",
+  "widget": "workflow"
+ },
+ {
+  "slug": "source-conflicts",
+  "name": "Multi-source conflict finder",
+  "widget": "conflict"
+ },
+ {
+  "slug": "record-rebuild-compare",
+  "name": "Rebuilt vs original compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "web-project-checklist",
+  "name": "Website launch checklist",
+  "widget": "checklist"
+ },
+ {
+  "slug": "workflow-steps",
+  "name": "Workflow step lister",
+  "widget": "workflow"
+ },
+ {
+  "slug": "handover-checklist",
+  "name": "Handover checklist",
+  "widget": "checklist"
+ },
+ {
+  "slug": "workstream-timeline",
+  "name": "Workstream timeline",
+  "widget": "timeline"
+ },
+ {
+  "slug": "procedure-compare",
+  "name": "Procedure compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "message-checker",
+  "name": "Message clarity checker",
+  "widget": "text"
+ },
+ {
+  "slug": "task-dedupe",
+  "name": "Task list duplicate finder",
+  "widget": "dupes"
+ },
+ {
+  "slug": "handoff-data-profile",
+  "name": "Handoff data profile",
+  "widget": "profile"
+ },
+ {
+  "slug": "provider-rehearsal-compare",
+  "name": "Provider rehearsal compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "assumption-timeline",
+  "name": "Assumption review timeline",
+  "widget": "timeline"
+ },
+ {
+  "slug": "experiment-profile",
+  "name": "Experiment results profile",
+  "widget": "profile"
+ },
+ {
+  "slug": "retirement-checklist",
+  "name": "System retirement checklist",
+  "widget": "checklist"
+ },
+ {
+  "slug": "pattern-tester",
+  "name": "Search pattern tester",
+  "widget": "regex"
+ },
+ {
+  "slug": "handoff-config",
+  "name": "Handoff config inspector",
+  "widget": "json"
+ },
+ {
+  "slug": "experiment-log-timeline",
+  "name": "Experiment log timeline",
+  "widget": "timeline"
+ },
+ {
+  "slug": "account-list-compare",
+  "name": "Account list compare",
+  "widget": "csvdiff"
+ },
+ {
+  "slug": "publish-checklist",
+  "name": "Publishing checklist",
+  "widget": "checklist"
+ },
+ {
+  "slug": "campaign-dedupe",
+  "name": "Campaign contact duplicate finder",
+  "widget": "dupes"
+ },
+ {
+  "slug": "reply-checker",
+  "name": "Reply draft checker",
+  "widget": "text"
+ },
+ {
+  "slug": "application-dedupe",
+  "name": "Application tracker duplicate finder",
+  "widget": "dupes"
+ },
+ {
+  "slug": "correction-conflicts",
+  "name": "Correction conflict finder",
+  "widget": "conflict"
+ },
+ {
+  "slug": "outcome-profile",
+  "name": "Outcome numbers profile",
+  "widget": "profile"
+ }
+]
