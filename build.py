@@ -53,7 +53,9 @@ for slug,t,s,items in O:
     b=''.join(f'<div class="card"><h2>{n}</h2><p>{x}</p><p><a href="../work/{k}/">See a working example (demo data) →</a></p></div>' for n,k,x in items)
     page(f'offers/{slug}.html',t,s,b+'<div class="card"><h2>How it works</h2><ol><li>You send a small sample (anonymised is fine).</li><li>I run it free and show you the result.</li><li>If it helps, I quote a fixed price.</li></ol></div>',1)
 cards=''.join(f'<div class="card"><h2><a href="offers/{slug}.html">{t}</a></h2><p>{s}</p></div>' for slug,t,s,_ in O)
-work=''.join(f'<li><a href="work/{k}/">{v[0]}</a></li>' for k,v in W.items())
+# Hand-written pages under work/. Keep them off W so page() does not overwrite their HTML.
+EXTRA=[('seller-payout-demo','Demo: payout matching on sample records'),('seller-payout-case-study','Case study (sample): payout cleanup for an online seller')]
+work=''.join(f'<li><a href="work/{k}/">{v[0]}</a></li>' for k,v in W.items())+''.join(f'<li><a href="work/{k}/">{t}</a></li>' for k,t in EXTRA)
 page('index.html','Finance automation &amp; AI workflows, with a human in control','I am Hemanth Raja: MBA in Finance, about five years of tax, GST and bookkeeping practice, and I build tested automation tools.',
  cards+f'<div class="card"><h2>Working examples</h2><ul>{work}</ul><p>Every example runs on demo data and has automated tests.</p></div>',0)
 open('.nojekyll','w').write('')

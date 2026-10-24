@@ -23,6 +23,9 @@ Send the base URL back. The 7 proof slots get these URLs (set `public: true`):
 - invoice-extractor → <BASE>/work/invoice-extractor/
 - fpa-variance-forecast → <BASE>/work/fpa-variance-forecast/
 - gst-itc-recon → <BASE>/work/gst-itc-recon/
+Hand-written pages (listed on the home page by build.py; their HTML is not regenerated):
+- seller-payout-demo → <BASE>/work/seller-payout-demo/
+- seller-payout-case-study → <BASE>/work/seller-payout-case-study/
 Group pages: <BASE>/offers/agencies.html, /offers/bookkeepers.html, /offers/sellers.html.
 
 To rebuild after edits: `python3 build.py` (build.py can be left out of the upload).
