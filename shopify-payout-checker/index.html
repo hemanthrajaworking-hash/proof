@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Shopify payout checker (free, runs in your browser) | Hemanth Raja</title><meta name="description" content="Match Shopify payouts to your bank deposits and see fees, refunds, chargebacks and missing money. Runs entirely in your browser; nothing is uploaded."><link rel="icon" href="data:,"><link rel="stylesheet" href="../style.css">
+<style>table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e3e7ee;padding:6px;text-align:left;vertical-align:top}td.n{text-align:right;white-space:nowrap}.s-MATCHED{color:#1a7f37}.s-MATCHED_WITHIN_TOLERANCE{color:#1a7f37}.s-PARTIAL{color:#9a6700}.s-MISSING_DEPOSIT,.s-DEPOSIT_WITHOUT_PAYOUT,.s-UNREADABLE{color:#c0392b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.kpi{background:#f3f6fa;border-radius:8px;padding:10px}.kpi b{display:block;font-size:20px}label{display:block;margin:8px 0}button{padding:9px 14px;border-radius:8px;border:1px solid #0b5cad;background:#fff;color:#0b5cad;cursor:pointer;margin:4px 6px 4px 0}button.primary{background:#0b5cad;color:#fff}.wrap{overflow-x:auto}.warn{color:#9a6700}</style></head><body>
+<header><div><a href="../index.html">Hemanth Raja · Finance automation &amp; AI workflows</a><h1>Shopify payout checker</h1><p>Check that every Shopify payout actually reached your bank, and see what fees, refunds and chargebacks took out along the way. Free. It runs only in your browser: your files are not uploaded, stored or sent anywhere.</p></div></header>
+<main>
+<div class="card"><h2>1. Choose your two files</h2>
+<label>Shopify payouts CSV (Shopify admin → Finance → Payouts → Export)<br><input type="file" id="fPayouts" accept=".csv,text/csv"></label>
+<label>Bank statement CSV (date, description and amount, or separate credit/debit columns)<br><input type="file" id="fBank" accept=".csv,text/csv"></label>
+<details><summary>Matching settings</summary>
+<label>Amount tolerance (currency units) <input type="number" id="tol" value="0.05" step="0.01" min="0"></label>
+<label>Days after payout date to look for the deposit <input type="number" id="win" value="5" min="0" max="30"></label>
+<label>Treat as a short/partial deposit if within this % of the payout <input type="number" id="pct" value="20" min="0" max="100"></label>
+<label><input type="checkbox" id="dayFirst"> Bank dates are day/month/year (UK, AU, India)</label></details>
+<button class="primary" id="run">Check my payouts</button><button id="sample">Try with sample data</button>
+<p>Sample files: <a href="samples/shopify_payouts_sample.csv" download>payouts</a> · <a href="samples/bank_statement_sample.csv" download>bank statement</a> (made-up data).</p>
+<p id="msg" class="warn" role="status"></p></div>
+<div id="results" hidden>
+<div class="card"><h2>2. Summary</h2><div class="grid" id="kpis"></div><ul id="warnings" class="warn"></ul></div>
+<div class="card"><h2>3. Line by line</h2><p><button id="dl">Download result CSV</button><label style="display:inline"><input type="checkbox" id="onlyExc"> Show only items that need attention</label></p><div class="wrap"><table><thead><tr><th>Payout</th><th>Date</th><th>Payout total</th><th>Fees</th><th>Refunds</th><th>Adjustments</th><th>Bank date</th><th>Bank amount</th><th>Diff</th><th>Status</th><th>Next step</th></tr></thead><tbody id="tbody"></tbody></table></div></div>
+</div>
+<div class="card"><h2>How it matches</h2><ol><li>Exact amount, deposit dated on or up to N days after the payout date (closest date wins, each deposit used once, so two payouts of the same amount are not double-counted).</li><li>Within the amount tolerance (rounding or a small bank charge).</li><li>Partial: same window, but the deposit is short or over by more than the tolerance.</li><li>Anything left is a missing deposit, or a Shopify-labelled deposit with no payout row.</li></ol><p>Limits: it does not combine several payouts into one deposit, does not convert currencies, and cannot see orders behind a payout. It is a quick check, not an audit.</p></div>
+<div class="card"><h2>Want this done for you every month?</h2><p>I run a monthly Shopify payout reconciliation for small sellers: payouts matched to the bank, fees and refunds summarised, chargebacks and missing deposits listed with what to do next, and a short written report. <b>$50–150 a month</b>, depending on volume and number of channels. Your first month's check is free, so you can see the result before deciding.</p>
+<p><a class="cta" href="mailto:hemanthrajaworking@gmail.com?subject=Monthly%20Shopify%20payout%20reconciliation">Email me about monthly reconciliation</a> &nbsp; hemanthrajaworking@gmail.com</p></div>
+</main>
+<footer>Sample data is synthetic. This page makes no network requests and keeps nothing after you close it. · Hyderabad, India · <a href="mailto:hemanthrajaworking@gmail.com">hemanthrajaworking@gmail.com</a></footer>
+<script src="js/recon.js"></script><script src="js/samples.js"></script><script src="js/app.js"></script></body></html>
